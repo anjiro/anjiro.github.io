@@ -2,6 +2,7 @@ var WHITE_ICON = './images/icon-white.svg';
 var GRAY_ICON = './images/icon-gray.svg';
 
 var getBadges = function(t){
+	console.log("t: ", t);
   return t.card('name')
   .get('name')
   .then(function(cardName){
