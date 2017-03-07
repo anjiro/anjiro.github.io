@@ -3,50 +3,21 @@ var GRAY_ICON = './images/icon-gray.svg';
 
 var getBadges = function(t){
 	t.card('id', 'name', 'url', 'due').then(function(pr){console.log(pr)});
-  return t.card('name')
-  .get('name')
-  .then(function(cardName){
+  return t.card('due')
+  .get('due')
+  .then(function(cardDue){
     var badgeColor;
     var icon = GRAY_ICON;
-    var lowercaseName = cardName.toLowerCase();
-    if(lowercaseName.indexOf('green') > -1){
-      badgeColor = 'green';
-      icon = WHITE_ICON;
-    } else if(lowercaseName.indexOf('yellow') > -1){
-      badgeColor = 'yellow';
-      icon = WHITE_ICON;
-    } else if(lowercaseName.indexOf('red') > -1){
-      badgeColor = 'red';
-      icon = WHITE_ICON;
-    }
 
-    if(lowercaseName.indexOf('dynamic') > -1){
-      // dynamic badges can have their function rerun after a set number
-      // of seconds defined by refresh. Minimum of 10 seconds.
-      return [{
-        dynamic: function(){
-          return {
-            title: 'Detail Badge', // for detail badges only
-            text: 'Dynamic ' + (Math.random() * 100).toFixed(0).toString(),
-            icon: icon, // for card front badges only
-            color: badgeColor,
-            refresh: 10
-          }
-        }
-      }]
-    }
+		var dueDate = new Date(Date.parse(cardDue));
+		var daysLeft = Math.floor((dueDate - Date.now())/(3600*24*1000)) + 1;
 
-    if(lowercaseName.indexOf('static') > -1){
-      // return an array of badge objects
-      return [{
-        title: 'Detail Badge', // for detail badges only
-        text: 'Static',
-        icon: icon, // for card front badges only
-        color: badgeColor
-      }];
-    } else {
-      return [];
-    }
+		return [{
+			title: 'Detail Badge', // for detail badges only
+			text: daysLeft,
+			icon: icon, // for card front badges only
+			color: 'red'
+		}];
   })
 };
 
