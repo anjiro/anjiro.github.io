@@ -3,7 +3,7 @@
   "description": "",
   "details": "Show how many days till the card is due.",
   "icon": {
-    "url": "./images/logo.png"
+    "url": "./logo.png"
   },
   "author": "Daniel Ashbrook",
   "capabilities": [
