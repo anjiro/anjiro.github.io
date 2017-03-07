@@ -13,9 +13,9 @@ var getBadges = function(t){
 		var daysLeft = Math.floor((dueDate - Date.now())/(3600*24*1000)) + 1;
 
 		return [{
-			title: 'Detail Badge', // for detail badges only
+			//title: 'Detail Badge', // for detail badges only
 			text: daysLeft,
-			icon: icon, // for card front badges only
+			//icon: icon, // for card front badges only
 			color: 'red'
 		}];
   })
