@@ -1,12 +1,12 @@
 {
   "name": "Days Till Due",
-  "details": "Show a badge showing the number of days until a card is due.",
+  "details": "Show a badge with days till due",
   "icon": {
     "url": "./images/logo.png"
   },
   "author": "Daniel Ashbrook",
   "capabilities": [
-    "card-badges",
+    "card-badges"
   ],
   "connectors": {
     "iframe": {
