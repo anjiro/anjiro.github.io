@@ -1,6 +1,6 @@
 {
   "name": "Days Till Due",
-  "description": "",
+  "description": "Days till due",
   "details": "Show a badge showing the number of days until a card is due.",
   "icon": {
     "url": "./images/logo.png"
